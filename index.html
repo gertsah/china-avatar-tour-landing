@@ -3,280 +3,369 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Пекин - горы Аватара - Шанхай | Авторский тур по Китаю</title>
+    <title>Путешествие к горам Аватара | Пекин - Чжанцзяцзе - Шанхай</title>
     <meta
       name="description"
-      content="7-дневный авторский тур по Китаю: императорский Пекин, летучие горы Аватара в Чжанцзяцзе и футуристический Шанхай."
+      content="Авторский тур по Китаю: Пекин, Великая Китайская стена, горы Аватара в Чжанцзяцзе и футуристический Шанхай."
     />
-    <link rel="preload" href="assets/tour-video.mp4" as="video" />
     <link rel="preload" href="assets/images/image6.jpeg" as="image" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="ambient-bg" aria-hidden="true">
-      <video src="assets/tour-video.mp4" poster="assets/images/image6.jpeg" autoplay muted loop playsinline></video>
-      <div class="ambient-tint"></div>
-      <div class="ambient-grain"></div>
-    </div>
-
-    <header class="site-header" aria-label="Навигация">
-      <a class="brand" href="#top" aria-label="К началу">
+    <header class="site-header">
+      <a class="brand" href="#top">
         <span class="brand-mark"></span>
-        <span>China Avatar Tour</span>
+        <span>Маршрут построен</span>
       </a>
-      <div class="header-progress" aria-hidden="true">
-        <span></span>
-      </div>
-      <a class="header-cta" href="#request">Заявка</a>
+      <nav class="nav-links" aria-label="Навигация">
+        <a href="#impressions">Впечатления</a>
+        <a href="#program">Программа</a>
+        <a href="#included">Стоимость</a>
+        <a href="#request">Заявка</a>
+      </nav>
+      <a class="header-button" href="#request">Забронировать</a>
     </header>
 
-    <main id="top" class="journey">
-      <section class="hero scene" data-step="Пекин">
-        <div class="hero-content reveal">
-          <p class="eyebrow">Авторское путешествие по Китаю</p>
-          <h1>Пекин, летучие горы Аватара и Шанхай за 7 дней</h1>
-          <p class="hero-lead">
-            Один непрерывный маршрут: древняя столица, туманные пики Чжанцзяцзе и вечерний мегаполис, который светится
-            над рекой Хуанпу.
+    <main id="top">
+      <section class="hero">
+        <video class="hero-video" src="assets/tour-video.mp4" autoplay muted loop playsinline></video>
+        <div class="hero-overlay"></div>
+        <div class="hero-inner">
+          <p class="hero-kicker">Другой мир - Китай</p>
+          <h1>Путешествие к летучим горам Аватара</h1>
+          <p class="hero-subtitle">
+            Императорский Пекин, мистический Чжанцзяцзе и футуристический Шанхай в одном насыщенном маршруте.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#request">Оставить заявку</a>
-            <button class="button button-ghost" type="button" data-open-video>Смотреть видео</button>
+            <a class="button button-primary" href="#program">Смотреть программу тура</a>
+            <button class="button button-light" type="button" data-open-video>Видео тура</button>
           </div>
-        </div>
-        <div class="hero-metrics reveal" aria-label="Ключевые факты тура">
-          <span><strong>7</strong> полных дней</span>
-          <span><strong>3</strong> города и природных главы</span>
-          <span><strong>4+</strong> отели Mercure</span>
+          <div class="hero-facts" aria-label="Ключевые параметры тура">
+            <span><strong>7</strong> полных дней</span>
+            <span><strong>3</strong> главные точки маршрута</span>
+            <span><strong>4+</strong> отели Mercure</span>
+          </div>
         </div>
       </section>
 
-      <div class="journey-layout">
-        <aside class="journey-rail" aria-label="Путь тура">
-          <span class="rail-line"><i></i></span>
-          <a href="#beijing" data-rail="Пекин">Пекин</a>
-          <a href="#avatar" data-rail="Чжанцзяцзе">Чжанцзяцзе</a>
-          <a href="#shanghai" data-rail="Шанхай">Шанхай</a>
-          <a href="#request" data-rail="Заявка">Заявка</a>
-        </aside>
+      <section class="intro-strip" aria-label="Смысл путешествия">
+        <span>奧秘</span>
+        <span>冒險</span>
+        <span>情感</span>
+        <span>印象</span>
+      </section>
 
-        <div class="story-flow">
-          <section class="story-block opening scene" id="beijing" data-step="Пекин">
-            <div class="sticky-copy reveal">
-              <p class="eyebrow">Начало маршрута</p>
-              <h2>Не просто увидеть Китай, а прожить его</h2>
-              <p>
-                Путешествие начинается с момента приземления: личный гид, комфортный трансфер и старый Пекин, где
-                императорские дворцы, храмы и чайная церемония сразу задают тон всей поездке.
-              </p>
-            </div>
-            <div class="floating-stack">
-              <article class="glass-card image-card reveal">
-                <img src="assets/images/image2.jpg" alt="Запретный город в Пекине на закате" />
-                <div>
-                  <span>Пекин</span>
-                  <h3>Запретный город, Тяньаньмэнь и Храм Неба</h3>
-                  <p>День большого императорского маршрута, Летний дворец, озеро Куньмин и вечерняя панорама города.</p>
-                </div>
-              </article>
-              <article class="glass-card image-card reveal">
-                <img src="assets/images/image1.jpg" alt="Храм Неба в Пекине" />
-                <div>
-                  <span>Первый вечер</span>
-                  <h3>Чайная церемония и пекинская утка</h3>
-                  <p>Гастрономическое путешествие в эпоху Цин и легендарный вкус, который стал культурным символом.</p>
-                </div>
-              </article>
-            </div>
-          </section>
-
-          <section class="story-block wall scene" data-step="Пекин">
-            <div class="sticky-copy reveal">
-              <p class="eyebrow">Смена декораций</p>
-              <h2>Великая стена, затем перелет к другой вселенной</h2>
-              <p>
-                Утро проходит на Великой Китайской стене, среди каменных драконов и туманных гор. После обеда маршрут
-                резко меняет настроение: перелет переносит группу в Чжанцзяцзе, к земле, где начинаются горы Пандоры.
-              </p>
-            </div>
-            <figure class="sticky-photo reveal">
-              <img src="assets/images/image3.jpg" alt="Великая Китайская стена среди гор" />
-              <figcaption>День 3: Великая стена и перелет в Чжанцзяцзе</figcaption>
-            </figure>
-          </section>
-
-          <section class="avatar-canvas scene" id="avatar" data-step="Чжанцзяцзе">
-            <div class="avatar-sticky reveal">
-              <p class="eyebrow">Главный день путешествия</p>
-              <h2>Вход в легенду: Национальный парк Чжанцзяцзе</h2>
-              <p>
-                Лифт Байлун поднимает к каменным столбам, природный мост висит между пиками, а ручей Золотой Кнут
-                ведет через лес, где скалы выглядят невозможными для реального мира.
-              </p>
-              <button class="button button-primary" type="button" data-open-video>Открыть видео тура</button>
-            </div>
-            <div class="avatar-scroll">
-              <article class="moment-card reveal">
-                <img src="assets/images/image5.png" alt="Скалы Чжанцзяцзе и лифт Байлун" />
-                <span>Лифт Байлун</span>
-                <h3>326 метров вдоль отвесной скалы</h3>
-              </article>
-              <article class="moment-card reveal">
-                <img src="assets/images/image6.jpeg" alt="Парящие скалы Чжанцзяцзе" />
-                <span>Парящие горы</span>
-                <h3>Каменные пики, которые стали образом Пандоры</h3>
-              </article>
-              <article class="moment-card reveal">
-                <img src="assets/images/image7.png" alt="Бирюзовый ручей среди скал" />
-                <span>Золотой Кнут</span>
-                <h3>Самая спокойная и кинематографичная часть парка</h3>
-              </article>
-            </div>
-          </section>
-
-          <section class="choice scene" data-step="Чжанцзяцзе">
-            <div class="sticky-copy reveal">
-              <p class="eyebrow">День 5</p>
-              <h2>Пропасть под ногами или Небесные врата</h2>
-              <p>
-                Группа выбирает финальный аккорд горного приключения: стеклянный мост над каньоном или гора Тяньмэнь с
-                дорогой из 99 поворотов, канатной дорогой и аркой Небесные врата.
-              </p>
-            </div>
-            <div class="split-moments">
-              <article class="glass-card reveal">
-                <h3>Гранд-каньон и стеклянный мост</h3>
-                <p>Прозрачный пол, глубина под ногами, живописные тропы и фотографии, которым трудно поверить.</p>
-              </article>
-              <article class="glass-card image-card reveal">
-                <img src="assets/images/image4.jpg" alt="Арка Небесные врата на горе Тяньмэнь" />
-                <div>
-                  <span>Тяньмэнь</span>
-                  <h3>999 ступеней к природной арке</h3>
-                  <p>Место, где облака проходят сквозь отверстие в горе и создают ощущение входа в другой мир.</p>
-                </div>
-              </article>
-            </div>
-          </section>
-
-          <section class="shanghai scene" id="shanghai" data-step="Шанхай">
-            <div class="sticky-copy reveal">
-              <p class="eyebrow">Финальная глава</p>
-              <h2>Скоростной поезд в Шанхай и город, который не спит</h2>
-              <p>
-                После гор маршрут мчится к Шанхаю: Старый город, сад Юйюань, Наньцзин-роуд, Бунд, Пудун и вечерний
-                круиз по реке Хуанпу среди отражений небоскребов.
-              </p>
-            </div>
-            <div class="shanghai-frame reveal">
-              <img src="assets/images/image8.jpg" alt="Вечерний Шанхай с небоскребами района Пудун" />
-              <div class="city-notes">
-                <span>Сад Юйюань</span>
-                <span>Наньцзин-роуд</span>
-                <span>Бунд</span>
-                <span>Пудун</span>
-                <span>Круиз по Хуанпу</span>
-              </div>
-            </div>
-          </section>
-
-          <section class="days-river scene" data-step="Маршрут">
-            <div class="river-intro reveal">
-              <p class="eyebrow">Программа без пауз</p>
-              <h2>Весь тур течет одной линией</h2>
-            </div>
-            <div class="day-stream" aria-label="Программа тура по дням">
-              <article class="day-pill reveal">
-                <strong>1</strong>
-                <span>Пекин, храмы, чайная церемония, приветственный ужин</span>
-              </article>
-              <article class="day-pill reveal">
-                <strong>2</strong>
-                <span>Тяньаньмэнь, Запретный город, Храм Неба, Летний дворец</span>
-              </article>
-              <article class="day-pill reveal">
-                <strong>3</strong>
-                <span>Великая стена и перелет в Чжанцзяцзе</span>
-              </article>
-              <article class="day-pill reveal accent">
-                <strong>4</strong>
-                <span>Лифт Байлун, парящие скалы, Золотой Кнут и закат над Пандорой</span>
-              </article>
-              <article class="day-pill reveal">
-                <strong>5</strong>
-                <span>Стеклянный мост или Небесные врата, затем поезд в Шанхай</span>
-              </article>
-              <article class="day-pill reveal">
-                <strong>6</strong>
-                <span>Старый Шанхай, Юйюань, Бунд и круиз по Хуанпу</span>
-              </article>
-              <article class="day-pill reveal">
-                <strong>7</strong>
-                <span>Пудун, Французская концессия и прощальный ужин</span>
-              </article>
-              <article class="day-pill reveal optional">
-                <strong>+</strong>
-                <span>Опционально: Чжуцзяцзяо, каналы и старинные мосты</span>
-              </article>
-            </div>
-          </section>
-
-          <section class="included-flow scene" data-step="Условия">
-            <div class="included-copy reveal">
-              <p class="eyebrow">Условия</p>
-              <h2>Все главное уже заложено в маршрут</h2>
-            </div>
-            <div class="included-columns">
-              <div class="glass-card reveal">
-                <h3>Включено</h3>
-                <ul>
-                  <li>Экскурсионная программа на 7 полных дней</li>
-                  <li>Все экскурсии и входные билеты по программе</li>
-                  <li>Проживание в отелях 4+ сети Mercure</li>
-                  <li>Завтраки и приветственный ужин в Пекине</li>
-                  <li>Перелет в Чжанцзяцзе и скоростной поезд до Шанхая</li>
-                  <li>Трансферы, русскоговорящий гид и передвижения по маршруту</li>
-                </ul>
-              </div>
-              <div class="glass-card muted-card reveal">
-                <h3>Не включено</h3>
-                <ul>
-                  <li>Международный перелет в Китай</li>
-                  <li>Ужины 6 дней</li>
-                  <li>Карманные расходы</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section class="request-section scene" id="request" data-step="Заявка">
-            <div class="request-copy reveal">
-              <p class="eyebrow">Финальный экран</p>
-              <h2>Оставьте заявку на тур</h2>
-              <p>
-                Лендинг уже готов для показа клиентам: фон живет во время скролла, маршрут раскрывается постепенно, а
-                заявка сохраняется прямо на странице.
-              </p>
-            </div>
-            <form class="lead-form reveal" id="leadForm">
-              <label>
-                Имя
-                <input type="text" name="name" placeholder="Как к вам обращаться" required />
-              </label>
-              <label>
-                Телефон или мессенджер
-                <input type="text" name="contact" placeholder="+7 или ник в мессенджере" required />
-              </label>
-              <label>
-                Комментарий
-                <textarea name="message" rows="4" placeholder="Когда планируете поездку и сколько человек?"></textarea>
-              </label>
-              <button class="button button-primary form-button" type="submit">Отправить заявку</button>
-              <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
-            </form>
-          </section>
+      <section class="impressions section" id="impressions">
+        <div class="section-heading">
+          <p class="eyebrow">Впечатления</p>
+          <h2>То, что останется с вами после поездки</h2>
         </div>
-      </div>
+        <div class="impression-grid">
+          <article class="impression-card large">
+            <img src="assets/images/image6.jpeg" alt="Парящие скалы Чжанцзяцзе" />
+            <div>
+              <h3>Увидите легендарные горы Аватара</h3>
+              <p>Мир каменных столбов, тумана и смотровых площадок, который кажется декорацией к фантастическому фильму.</p>
+            </div>
+          </article>
+          <article class="impression-card">
+            <img src="assets/images/image3.jpg" alt="Великая Китайская стена" />
+            <div>
+              <h3>Пройдете по Великой Китайской стене</h3>
+              <p>Место силы и один из самых узнаваемых символов планеты.</p>
+            </div>
+          </article>
+          <article class="impression-card">
+            <img src="assets/images/image8.jpg" alt="Вечерний Шанхай" />
+            <div>
+              <h3>Почувствуете контраст Шанхая</h3>
+              <p>Старый город, Бунд, Пудун и круиз по Хуанпу среди огней.</p>
+            </div>
+          </article>
+          <article class="impression-card">
+            <img src="assets/images/image4.jpg" alt="Небесные врата на горе Тяньмэнь" />
+            <div>
+              <h3>Выберете свой финальный вызов</h3>
+              <p>Стеклянный мост над каньоном или гора Тяньмэнь с Небесными вратами.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="route-map section">
+        <div class="section-heading align-left">
+          <p class="eyebrow">Маршрут</p>
+          <h2>3 главы одного путешествия</h2>
+        </div>
+        <div class="route-cards">
+          <article>
+            <span>01</span>
+            <h3>Пекин</h3>
+            <p>Храмы, Запретный город, Летний дворец, Великая стена, чайная церемония и пекинская утка.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Чжанцзяцзе</h3>
+            <p>Национальный парк, лифт Байлун, ручей Золотой Кнут, Тяньмэнь или стеклянный мост.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Шанхай</h3>
+            <p>Сад Юйюань, Старый город, Наньцзин-роуд, Бунд, Пудун и прощальный ужин с видом.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="program section" id="program">
+        <div class="program-head">
+          <div>
+            <p class="eyebrow">Программа тура</p>
+            <h2>Распределение по дням</h2>
+          </div>
+          <p>
+            Выберите день, чтобы увидеть локации, ритм и главный смысл каждого этапа маршрута.
+          </p>
+        </div>
+
+        <div class="day-tabs" role="tablist" aria-label="Дни тура">
+          <button class="day-tab is-active" type="button" role="tab" aria-selected="true" data-day="1">день 1</button>
+          <button class="day-tab" type="button" role="tab" aria-selected="false" data-day="2">день 2</button>
+          <button class="day-tab" type="button" role="tab" aria-selected="false" data-day="3">день 3</button>
+          <button class="day-tab" type="button" role="tab" aria-selected="false" data-day="4">день 4</button>
+          <button class="day-tab" type="button" role="tab" aria-selected="false" data-day="5">день 5</button>
+          <button class="day-tab" type="button" role="tab" aria-selected="false" data-day="6">день 6</button>
+          <button class="day-tab" type="button" role="tab" aria-selected="false" data-day="7">день 7</button>
+          <button class="day-tab" type="button" role="tab" aria-selected="false" data-day="8">опция</button>
+        </div>
+
+        <label class="day-select-label">
+          День программы
+          <select id="daySelect" class="day-select">
+            <option value="1">День 1 - первые часы в Пекине</option>
+            <option value="2">День 2 - императорский Пекин</option>
+            <option value="3">День 3 - Великая стена и перелет</option>
+            <option value="4">День 4 - горы Аватара</option>
+            <option value="5">День 5 - Тяньмэнь или стеклянный мост</option>
+            <option value="6">День 6 - старый и вечерний Шанхай</option>
+            <option value="7">День 7 - Пудун и прощальный вечер</option>
+            <option value="8">Опция - Чжуцзяцзяо</option>
+          </select>
+        </label>
+
+        <div class="day-panel is-active" data-panel="1">
+          <div class="day-gallery">
+            <img src="assets/images/image1.jpg" alt="Храм Неба в Пекине" />
+            <img src="assets/images/image2.jpg" alt="Запретный город в Пекине" />
+            <img src="assets/images/image8.jpg" alt="Вечерний город" />
+          </div>
+          <div class="day-content">
+            <p class="day-city">Пекин</p>
+            <h3>День 1. Прилет, первые храмы и ужин в эпохе Цин</h3>
+            <ul class="day-list">
+              <li><strong>Утро / день:</strong> встреча в аэропорту, трансфер и заселение в отель в сердце старого города.</li>
+              <li><strong>По желанию:</strong> Храм Солнца или Ламаистский храм Юнхэгун без лишней суеты.</li>
+              <li><strong>Вечер:</strong> чайная церемония и приветственный ужин с легендарной пекинской уткой.</li>
+            </ul>
+            <p class="impact">Сила впечатлений: мягкое погружение в Китай с первого дня.</p>
+          </div>
+        </div>
+
+        <div class="day-panel" data-panel="2">
+          <div class="day-gallery">
+            <img src="assets/images/image2.jpg" alt="Императорский дворец в Пекине" />
+            <img src="assets/images/image1.jpg" alt="Храм Неба" />
+            <img src="assets/images/image3.jpg" alt="Горы у Великой стены" />
+          </div>
+          <div class="day-content">
+            <p class="day-city">Пекин</p>
+            <h3>День 2. Исторический центр и императорские резиденции</h3>
+            <ul class="day-list">
+              <li><strong>Утро:</strong> площадь Тяньаньмэнь и Запретный город с историями императорских династий.</li>
+              <li><strong>День:</strong> Храм Неба и Летний дворец, прогулка по длинной галерее и озеру Куньмин.</li>
+              <li><strong>Вечер:</strong> ужин в ресторане традиционной кухни с панорамным видом на город.</li>
+            </ul>
+            <p class="impact">Сила впечатлений: Пекин как огромный живой музей.</p>
+          </div>
+        </div>
+
+        <div class="day-panel" data-panel="3">
+          <div class="day-gallery">
+            <img src="assets/images/image3.jpg" alt="Великая Китайская стена" />
+            <img src="assets/images/image6.jpeg" alt="Горы Чжанцзяцзе" />
+            <img src="assets/images/image5.png" alt="Каньон Чжанцзяцзе" />
+          </div>
+          <div class="day-content">
+            <p class="day-city">Пекин - Чжанцзяцзе</p>
+            <h3>День 3. Великая стена и перелет к горам Пандоры</h3>
+            <ul class="day-list">
+              <li><strong>Утро:</strong> выезд к Великой Китайской стене и прогулка по одному из самых сильных мест маршрута.</li>
+              <li><strong>День:</strong> обед и трансфер в аэропорт.</li>
+              <li><strong>Вечер:</strong> перелет в Чжанцзяцзе, встреча местным трансфером и отдых перед главным днем.</li>
+            </ul>
+            <p class="impact">Сила впечатлений: резкая смена мира - от империи к туманным скалам.</p>
+          </div>
+        </div>
+
+        <div class="day-panel" data-panel="4">
+          <div class="day-gallery">
+            <img src="assets/images/image6.jpeg" alt="Парящие скалы Чжанцзяцзе" />
+            <img src="assets/images/image5.png" alt="Лифт Байлун" />
+            <img src="assets/images/image7.png" alt="Ручей Золотой Кнут" />
+          </div>
+          <div class="day-content">
+            <p class="day-city">Чжанцзяцзе</p>
+            <h3>День 4. Национальный парк и летучие горы Аватара</h3>
+            <ul class="day-list">
+              <li><strong>Утро:</strong> вход в Национальный лесной парк Чжанцзяцзе и подъем на лифте Байлун.</li>
+              <li><strong>День:</strong> скалы-столбы, природный мост и прогулка вдоль ручья Золотой Кнут.</li>
+              <li><strong>Закат:</strong> канатная дорога и виды, ради которых едут в этот регион.</li>
+              <li><strong>Вечер:</strong> хунаньская кухня, шоу местных народностей или вертолетная прогулка за доплату.</li>
+            </ul>
+            <p class="impact">Сила впечатлений: главный визуальный пик путешествия.</p>
+          </div>
+        </div>
+
+        <div class="day-panel" data-panel="5">
+          <div class="day-gallery">
+            <img src="assets/images/image4.jpg" alt="Небесные врата" />
+            <img src="assets/images/image5.png" alt="Горы Чжанцзяцзе" />
+            <img src="assets/images/image8.jpg" alt="Шанхай вечером" />
+          </div>
+          <div class="day-content">
+            <p class="day-city">Чжанцзяцзе - Шанхай</p>
+            <h3>День 5. Стеклянный мост или Небесные врата</h3>
+            <ul class="day-list">
+              <li><strong>Вариант А:</strong> Гранд-каньон и стеклянный мост над пропастью.</li>
+              <li><strong>Вариант Б:</strong> гора Тяньмэнь, канатная дорога, 99 поворотов и 999 ступеней к арке.</li>
+              <li><strong>После прогулки:</strong> обед, трансфер на вокзал и скоростной поезд в Шанхай.</li>
+              <li><strong>Вечер:</strong> заселение и первые шаги по мегаполису.</li>
+            </ul>
+            <p class="impact">Сила впечатлений: личный выбор между адреналином и сакральной высотой.</p>
+          </div>
+        </div>
+
+        <div class="day-panel" data-panel="6">
+          <div class="day-gallery">
+            <img src="assets/images/image8.jpg" alt="Шанхай Пудун" />
+            <img src="assets/images/image2.jpg" alt="Старый город Китая" />
+            <img src="assets/images/image7.png" alt="Вода и вечерний маршрут" />
+          </div>
+          <div class="day-content">
+            <p class="day-city">Шанхай</p>
+            <h3>День 6. Старый город, Бунд и круиз по Хуанпу</h3>
+            <ul class="day-list">
+              <li><strong>Утро:</strong> Старый город и сад Юйюань с павильонами, мостиками и чайными лавками.</li>
+              <li><strong>День:</strong> Наньцзин-роуд, местный фуд-корт и прогулка к набережной Вайтань.</li>
+              <li><strong>Вечер:</strong> круиз по реке Хуанпу, огни Пудуна и отражения небоскребов в воде.</li>
+            </ul>
+            <p class="impact">Сила впечатлений: старый и новый Китай в одном кадре.</p>
+          </div>
+        </div>
+
+        <div class="day-panel" data-panel="7">
+          <div class="day-gallery">
+            <img src="assets/images/image8.jpg" alt="Башни Шанхая" />
+            <img src="assets/images/image1.jpg" alt="Архитектурные детали" />
+            <img src="assets/images/image6.jpeg" alt="Воспоминание о горах" />
+          </div>
+          <div class="day-content">
+            <p class="day-city">Шанхай</p>
+            <h3>День 7. Пудун, Французская концессия и прощальный вечер</h3>
+            <ul class="day-list">
+              <li><strong>Утро:</strong> Восточная жемчужина или Shanghai Tower, вид на город с высоты.</li>
+              <li><strong>День:</strong> бывшая Французская концессия, платаны, особняки, кофейни и авторские лавки.</li>
+              <li><strong>Вечер:</strong> прощальный ужин в панорамном ресторане с видом на вечерний Шанхай.</li>
+            </ul>
+            <p class="impact">Сила впечатлений: финальная точка большого маршрута.</p>
+          </div>
+        </div>
+
+        <div class="day-panel" data-panel="8">
+          <div class="day-gallery">
+            <img src="assets/images/image7.png" alt="Каналы и вода" />
+            <img src="assets/images/image8.jpg" alt="Шанхай" />
+            <img src="assets/images/image2.jpg" alt="Традиционная архитектура" />
+          </div>
+          <div class="day-content">
+            <p class="day-city">Опционально</p>
+            <h3>Дополнительный день. Чжуцзяцзяо - Китайская Венеция</h3>
+            <ul class="day-list">
+              <li><strong>После завтрака:</strong> выезд в древний городок на воде рядом с Шанхаем.</li>
+              <li><strong>День:</strong> лодка по каналам, старинные мосты, ремесленные лавки и местные деликатесы.</li>
+              <li><strong>Финал:</strong> спокойные фотографии на фоне воды и трансфер в аэропорт.</li>
+            </ul>
+            <p class="impact">Сила впечатлений: мягкое послевкусие путешествия.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="included section" id="included">
+        <div class="section-heading">
+          <p class="eyebrow">Мы все подготовили</p>
+          <h2>Что входит в путешествие</h2>
+        </div>
+        <div class="included-grid">
+          <article>
+            <h3>Питание</h3>
+            <p>Завтраки, приветственный ужин в Пекине и рекомендации проверенных мест по маршруту.</p>
+          </article>
+          <article>
+            <h3>Проживание</h3>
+            <p>Отели 4+ сети Mercure и удобная логистика размещения между городами.</p>
+          </article>
+          <article>
+            <h3>Трансфер</h3>
+            <p>Трансферы, перелет в Чжанцзяцзе, скоростной поезд до Шанхая и перемещения по программе.</p>
+          </article>
+        </div>
+        <div class="terms-grid">
+          <div>
+            <h3>В стоимость включено</h3>
+            <ul>
+              <li>Экскурсионная программа на 7 полных дней</li>
+              <li>Все экскурсии и входные билеты по программе</li>
+              <li>Проживание в отелях 4+</li>
+              <li>Завтраки и приветственный ужин</li>
+              <li>Русскоговорящий гид и все передвижения по маршруту</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Оплачивается дополнительно</h3>
+            <ul>
+              <li>Международный перелет в Китай</li>
+              <li>Ужины 6 дней</li>
+              <li>Карманные расходы</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="booking section" id="request">
+        <div class="booking-copy">
+          <p class="eyebrow">Хочу в Китай</p>
+          <h2>Оставьте контакты, мы расскажем детали поездки</h2>
+          <p>Можно обсудить даты, состав группы, дополнительные опции и формат связи.</p>
+          <button class="button button-light" type="button" data-open-video>Смотреть видео тура</button>
+        </div>
+        <form class="lead-form" id="leadForm">
+          <label>
+            Ваше имя
+            <input type="text" name="name" placeholder="Ваше имя" required />
+          </label>
+          <label>
+            Телефон или мессенджер
+            <input type="text" name="contact" placeholder="+7 или ник в мессенджере" required />
+          </label>
+          <fieldset>
+            <legend>Как с вами лучше связаться?</legend>
+            <label><input type="radio" name="channel" value="WhatsApp" checked /> WhatsApp</label>
+            <label><input type="radio" name="channel" value="MAX" /> MAX</label>
+            <label><input type="radio" name="channel" value="call" /> звонок</label>
+          </fieldset>
+          <button class="button button-primary form-button" type="submit">Забронировать место</button>
+          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+      </section>
     </main>
 
     <div class="video-modal" id="videoModal" aria-hidden="true">

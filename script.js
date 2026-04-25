@@ -5,15 +5,28 @@ const openVideoButtons = document.querySelectorAll("[data-open-video]");
 const closeVideoButtons = document.querySelectorAll("[data-close-video]");
 const leadForm = document.querySelector("#leadForm");
 const formNote = document.querySelector("#formNote");
-const railLinks = document.querySelectorAll(".journey-rail a");
-const revealItems = document.querySelectorAll(".reveal");
-const scenes = document.querySelectorAll(".scene");
+const dayTabs = document.querySelectorAll(".day-tab");
+const dayPanels = document.querySelectorAll(".day-panel");
+const daySelect = document.querySelector("#daySelect");
 
-const updateScrollState = () => {
-  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
-  document.documentElement.style.setProperty("--progress", `${progress}%`);
+const setHeaderState = () => {
   header.classList.toggle("is-scrolled", window.scrollY > 24);
+};
+
+const setActiveDay = (day) => {
+  dayTabs.forEach((tab) => {
+    const isActive = tab.dataset.day === day;
+    tab.classList.toggle("is-active", isActive);
+    tab.setAttribute("aria-selected", String(isActive));
+  });
+
+  dayPanels.forEach((panel) => {
+    panel.classList.toggle("is-active", panel.dataset.panel === day);
+  });
+
+  if (daySelect && daySelect.value !== day) {
+    daySelect.value = day;
+  }
 };
 
 const openVideo = () => {
@@ -31,45 +44,18 @@ const closeVideo = () => {
   modalVideo.pause();
 };
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-      }
-    });
-  },
-  {
-    threshold: 0.18,
-    rootMargin: "0px 0px -8% 0px",
-  },
-);
+window.addEventListener("scroll", setHeaderState, { passive: true });
+setHeaderState();
 
-const sceneObserver = new IntersectionObserver(
-  (entries) => {
-    const visible = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+dayTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    setActiveDay(tab.dataset.day);
+  });
+});
 
-    if (!visible) return;
-
-    const step = visible.target.dataset.step;
-    railLinks.forEach((link) => {
-      link.classList.toggle("is-active", link.dataset.rail === step);
-    });
-  },
-  {
-    threshold: [0.2, 0.45, 0.7],
-    rootMargin: "-18% 0px -46% 0px",
-  },
-);
-
-window.addEventListener("scroll", updateScrollState, { passive: true });
-window.addEventListener("resize", updateScrollState);
-updateScrollState();
-
-revealItems.forEach((item) => revealObserver.observe(item));
-scenes.forEach((scene) => sceneObserver.observe(scene));
+daySelect?.addEventListener("change", (event) => {
+  setActiveDay(event.target.value);
+});
 
 openVideoButtons.forEach((button) => {
   button.addEventListener("click", openVideo);
@@ -91,11 +77,12 @@ leadForm.addEventListener("submit", (event) => {
   const lead = {
     name: formData.get("name"),
     contact: formData.get("contact"),
-    message: formData.get("message"),
+    channel: formData.get("channel"),
     createdAt: new Date().toISOString(),
   };
 
   localStorage.setItem("chinaAvatarTourLead", JSON.stringify(lead));
   formNote.textContent = "Заявка сохранена на этой странице. Можно подключить отправку в мессенджер или CRM.";
   leadForm.reset();
+  setActiveDay("1");
 });
