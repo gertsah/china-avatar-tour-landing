@@ -9,6 +9,7 @@
       content="Авторский тур по Китаю: Пекин, Великая Китайская стена, горы Аватара в Чжанцзяцзе и футуристический Шанхай."
     />
     <link rel="preload" href="assets/images/image6.jpeg" as="image" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -113,6 +114,39 @@
             <h3>Шанхай</h3>
             <p>Сад Юйюань, Старый город, Наньцзин-роуд, Бунд, Пудун и прощальный ужин с видом.</p>
           </article>
+        </div>
+      </section>
+
+      <section class="animated-map section" id="map">
+        <div class="map-head">
+          <div>
+            <p class="eyebrow">Живая карта</p>
+            <h2>Как движется тур по настоящей карте Китая</h2>
+          </div>
+          <p>
+            Маршрут нанесен по ключевым точкам программы: Пекин, Великая стена, Чжанцзяцзе, Тяньмэнь, Шанхай и
+            опциональный Чжуцзяцзяо.
+          </p>
+        </div>
+        <div class="map-shell">
+          <div class="map-stage">
+            <div id="tourMap" class="tour-map" aria-label="Карта маршрута тура"></div>
+            <div class="map-fallback" id="mapFallback">
+              Карта загружается. Если она не появилась, проверьте подключение к интернету.
+            </div>
+            <div class="map-badge">
+              <span id="mapDayLabel">День 1</span>
+              <strong id="mapPlaceLabel">Пекин</strong>
+            </div>
+          </div>
+          <aside class="map-panel" aria-label="Этапы маршрута на карте">
+            <button class="map-play" type="button" id="mapPlayButton">Запустить движение</button>
+            <div class="map-steps" id="mapSteps"></div>
+            <p class="map-note">
+              Линия показывает общий ход тура. Внутригородские экскурсии объединены в ключевые точки, чтобы карта
+              читалась ясно.
+            </p>
+          </aside>
         </div>
       </section>
 
@@ -376,6 +410,7 @@
       </div>
     </div>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
