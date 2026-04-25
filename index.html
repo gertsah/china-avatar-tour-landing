@@ -10,7 +10,7 @@
     />
     <link rel="preload" href="assets/images/image6.jpeg" as="image" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=map-fix-20260425" />
   </head>
   <body>
     <header class="site-header">
@@ -132,7 +132,36 @@
           <div class="map-stage">
             <div id="tourMap" class="tour-map" aria-label="Карта маршрута тура"></div>
             <div class="map-fallback" id="mapFallback">
-              Карта загружается. Если она не появилась, проверьте подключение к интернету.
+              <div class="fallback-map-art" aria-hidden="true">
+                <svg viewBox="0 0 700 430" role="img">
+                  <path
+                    class="fallback-land"
+                    d="M128 72 C190 42 251 55 318 84 C377 109 429 95 486 126 C559 166 604 232 582 294 C559 360 492 383 412 371 C346 362 295 392 231 367 C159 338 105 292 93 223 C82 160 83 101 128 72 Z"
+                  />
+                  <polyline
+                    class="fallback-route-base"
+                    points="466,92 468,116 486,75 247,288 244,323 560,284 532,303"
+                  />
+                  <polyline
+                    class="fallback-route-active"
+                    points="466,92 468,116 486,75 247,288 244,323 560,284 532,303"
+                  />
+                  <g class="fallback-points">
+                    <circle cx="466" cy="92" r="9" />
+                    <circle cx="468" cy="116" r="9" />
+                    <circle cx="486" cy="75" r="9" />
+                    <circle cx="247" cy="288" r="9" />
+                    <circle cx="244" cy="323" r="9" />
+                    <circle cx="560" cy="284" r="9" />
+                    <circle cx="532" cy="303" r="9" />
+                  </g>
+                  <circle class="fallback-traveler" cx="466" cy="92" r="13" />
+                </svg>
+              </div>
+              <p>
+                Если интерактивная OpenStreetMap-карта не загрузилась, остается схема маршрута по тем же ключевым
+                точкам.
+              </p>
             </div>
             <div class="map-badge">
               <span id="mapDayLabel">День 1</span>
@@ -411,6 +440,6 @@
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js?v=map-fix-20260425"></script>
   </body>
 </html>

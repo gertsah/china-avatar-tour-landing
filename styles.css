@@ -407,10 +407,113 @@ p {
   position: absolute;
   inset: 0;
   display: grid;
+  align-content: center;
+  gap: 16px;
   place-items: center;
   padding: 24px;
   color: var(--muted);
   text-align: center;
+}
+
+.fallback-map-art {
+  width: min(92%, 720px);
+  border: 1px solid rgba(36, 36, 36, 0.1);
+  border-radius: 28px;
+  padding: 18px;
+  background:
+    radial-gradient(circle at 74% 20%, rgba(201, 147, 61, 0.2), transparent 28%),
+    radial-gradient(circle at 34% 70%, rgba(66, 106, 83, 0.22), transparent 30%),
+    rgba(255, 250, 241, 0.74);
+  box-shadow: 0 18px 48px rgba(36, 36, 36, 0.1);
+}
+
+.fallback-map-art svg {
+  width: 100%;
+  height: auto;
+}
+
+.fallback-land {
+  fill: rgba(66, 106, 83, 0.14);
+  stroke: rgba(66, 106, 83, 0.28);
+  stroke-width: 3;
+}
+
+.fallback-route-base {
+  fill: none;
+  stroke: rgba(140, 23, 21, 0.2);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.fallback-route-active {
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 720;
+  stroke-dashoffset: 720;
+  animation: drawFallbackRoute 6s ease-in-out infinite;
+}
+
+.fallback-points circle {
+  fill: var(--red);
+  stroke: #fff;
+  stroke-width: 5;
+}
+
+.fallback-traveler {
+  fill: var(--gold);
+  stroke: #fff;
+  stroke-width: 6;
+  filter: drop-shadow(0 10px 18px rgba(36, 36, 36, 0.32));
+  animation: fallbackTravel 6s ease-in-out infinite;
+}
+
+.map-fallback p {
+  max-width: 560px;
+}
+
+@keyframes drawFallbackRoute {
+  0% {
+    stroke-dashoffset: 720;
+  }
+
+  78%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fallbackTravel {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  14% {
+    transform: translate(2px, 24px);
+  }
+
+  28% {
+    transform: translate(20px, -17px);
+  }
+
+  48% {
+    transform: translate(-219px, 196px);
+  }
+
+  62% {
+    transform: translate(-222px, 231px);
+  }
+
+  82% {
+    transform: translate(94px, 192px);
+  }
+
+  100% {
+    transform: translate(66px, 211px);
+  }
 }
 
 .map-badge {

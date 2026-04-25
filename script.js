@@ -140,6 +140,28 @@ const updateMapLabels = (stopIndex) => {
   });
 };
 
+const renderMapSteps = (onSelect) => {
+  if (!mapSteps) return;
+
+  mapSteps.innerHTML = "";
+
+  tourStops.forEach((stop, index) => {
+    const button = document.createElement("button");
+    button.className = "map-step";
+    button.type = "button";
+    button.dataset.stopIndex = String(index);
+    button.innerHTML = `
+      <span class="map-step-number">${stop.number}</span>
+      <span>
+        <strong>${stop.place}</strong>
+        <span>${stop.day} · ${stop.transport}</span>
+      </span>
+    `;
+    button.addEventListener("click", () => onSelect(index));
+    mapSteps.appendChild(button);
+  });
+};
+
 const interpolate = (from, to, amount) => [
   from[0] + (to[0] - from[0]) * amount,
   from[1] + (to[1] - from[1]) * amount,
@@ -156,19 +178,34 @@ const buildPartialRoute = (progress) => {
 };
 
 const setMapPosition = (stopIndex) => {
+  cancelAnimationFrame(animationFrame);
+  updateMapLabels(stopIndex);
+
   if (!tourMap) return;
 
-  cancelAnimationFrame(animationFrame);
   const coords = tourStops[stopIndex].coords;
   const points = tourStops.slice(0, stopIndex + 1).map((stop) => stop.coords);
   activeRouteLine.setLatLngs(points.length > 1 ? points : [coords, coords]);
   movingMarker.setLatLng(coords);
   tourMap.flyTo(coords, stopIndex <= 2 ? 7 : 6, { duration: 0.9 });
-  updateMapLabels(stopIndex);
 };
 
 const playMapAnimation = () => {
-  if (!tourMap) return;
+  if (!tourMap) {
+    let index = 0;
+    mapPlayButton.textContent = "Движение идет...";
+    updateMapLabels(index);
+    const fallbackTimer = window.setInterval(() => {
+      index += 1;
+      updateMapLabels(index);
+
+      if (index >= tourStops.length - 1) {
+        window.clearInterval(fallbackTimer);
+        mapPlayButton.textContent = "Запустить движение заново";
+      }
+    }, 850);
+    return;
+  }
 
   cancelAnimationFrame(animationFrame);
   mapPlayButton.textContent = "Движение идет...";
@@ -200,6 +237,10 @@ const playMapAnimation = () => {
 const initTourMap = () => {
   const mapElement = document.querySelector("#tourMap");
 
+  renderMapSteps(setMapPosition);
+  updateMapLabels(0);
+  mapPlayButton?.addEventListener("click", playMapAnimation);
+
   if (!mapElement || typeof L === "undefined") {
     return;
   }
@@ -230,30 +271,14 @@ const initTourMap = () => {
     opacity: 0.95,
   }).addTo(tourMap);
 
-  tourStops.forEach((stop, index) => {
+  tourStops.forEach((stop) => {
     L.marker(stop.coords, { icon: createRouteIcon(stop.number) })
       .addTo(tourMap)
       .bindPopup(`<strong>${stop.day}: ${stop.place}</strong><br>${stop.title}<br><small>${stop.transport}</small>`);
-
-    const button = document.createElement("button");
-    button.className = "map-step";
-    button.type = "button";
-    button.dataset.stopIndex = String(index);
-    button.innerHTML = `
-      <span class="map-step-number">${stop.number}</span>
-      <span>
-        <strong>${stop.place}</strong>
-        <span>${stop.day} · ${stop.transport}</span>
-      </span>
-    `;
-    button.addEventListener("click", () => setMapPosition(index));
-    mapSteps.appendChild(button);
   });
 
   movingMarker = L.marker(tourStops[0].coords, { icon: createMovingIcon(), zIndexOffset: 1000 }).addTo(tourMap);
   tourMap.fitBounds(routeLine.getBounds(), { padding: [34, 34] });
-  updateMapLabels(0);
-  mapPlayButton.addEventListener("click", playMapAnimation);
 };
 
 window.addEventListener("scroll", setHeaderState, { passive: true });
